@@ -10,7 +10,7 @@ def process_events(events: Iterable[dict[str, Any]]) -> Generator[dict[str, Any]
             station_name = event.get("stationName")
             timestamp = event.get("timestamp")
             temp = event.get("temperature")
-            # update station_data with new sample
+            # UPDATE STATION_DATA w/ new sample data
             if station_name not in station_data:    # APPEND
                 station_data[station_name] = {
                     "most_recent_timestamp" : timestamp,
