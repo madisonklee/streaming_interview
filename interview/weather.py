@@ -1,7 +1,6 @@
 from typing import Any, Iterable, Generator
-# station_data will look like - { "Foster Weather Station" : { "most_recent_timestamp" :  "2022-01-01 00:00:00", "temp_list" : [13, 25.5, 30, 23.5] } }
-# Input: events, an iterable where each item is a dictionary with string keys and value Any type
-# Output: returns a generator that yields dictionaries with string keys and any type of value
+
+
 def process_events(events: Iterable[dict[str, Any]]) -> Generator[dict[str, Any], None, None]:
     station_data = {}   # aggregated data from each station    
     for event in events:
@@ -57,3 +56,4 @@ def process_events(events: Iterable[dict[str, Any]]) -> Generator[dict[str, Any]
                 raise ValueError(f"Unknown Command in Control Message: {event['command']}")
         else:       # then throw exception
             raise ValueError(f"Unknown Type of Message: {event['type']}")
+
